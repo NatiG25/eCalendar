@@ -5,9 +5,9 @@ export default function AddEvent() {
   const [addEvent, setAddEvent] = useState(false);
     return (
         <>
-          <button onClick={() => setAddEvent((prev) => !prev)}>Add Event</button>
+          <button onClick={() => setAddEvent(true)}>Add Event</button>
           {addEvent && (
-            <PopUp />
+            <PopUp setAddEvent={setAddEvent}/>
           )}
         </>
     )

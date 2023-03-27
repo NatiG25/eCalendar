@@ -1,4 +1,4 @@
-export default function PopUp() {
+export default function PopUp({setAddEvent}) {
     return (
         <>
           <h3>Add a new event</h3>
@@ -15,7 +15,7 @@ export default function PopUp() {
             <button type='submit'>Add Event</button>
           </form>
 
-          <button>Close</button>
+          <button onClick={() => setAddEvent((prev) => !prev) }>Close</button>
         </>
     )
 }
