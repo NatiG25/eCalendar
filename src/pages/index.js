@@ -18,7 +18,6 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <Date />
         <AddEvent />
       </main>
     </>
