@@ -1,9 +1,12 @@
 import InputEvent from "./InputEvent";
 
-export default function PopUp({ setAddEvent }) {
+export default function PopUp({ setAddEvent, addNewAppointment }) {
   return (
     <>
-      <InputEvent setAddEvent={setAddEvent} />
+      <InputEvent
+        setAddEvent={setAddEvent}
+        addNewAppointment={addNewAppointment}
+      />
     </>
   );
 }
