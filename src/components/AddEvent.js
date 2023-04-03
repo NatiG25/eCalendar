@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AppointmentItem from "./AppointmentItem";
 import PopUp from "./PopUp";
 
 export default function AddEvent() {
@@ -7,12 +8,6 @@ export default function AddEvent() {
 
   function addNewAppointment(newAppointment) {
     setAppointments([...appointments, newAppointment]);
-  }
-
-  function displayAppointments() {
-    appointments.map((item) => {
-      return <p>{item.title}</p>;
-    });
   }
 
   return (
@@ -24,7 +19,17 @@ export default function AddEvent() {
           addNewAppointment={addNewAppointment}
         />
       )}
-      {appointments ? displayAppointments : <p>No appointments</p>}
+      {appointments ? (
+        appointments.map((item) => {
+          return (
+            <ul>
+              <AppointmentItem appointments={item} />
+            </ul>
+          );
+        })
+      ) : (
+        <p>No Appointments</p>
+      )}
     </>
   );
 }
