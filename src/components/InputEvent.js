@@ -17,6 +17,7 @@ export default function InputEvent({ setAddEvent, addNewAppointment }) {
   function handleSubmit(e) {
     e.preventDefault();
     addNewAppointment(appointmentDetails);
+// Clear input fields
     titleRef.current.value = "";
     dateRef.current.value = "";
     descriptionRef.current.value = "";
