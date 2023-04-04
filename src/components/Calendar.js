@@ -1,30 +1,32 @@
-import FullCalendar from '@fullcalendar/react'
-import daygrid from '@fullcalendar/daygrid'
+import FullCalendar from "@fullcalendar/react";
+import daygrid from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
 
-const events = [
-    { title: 'Meeting', start: new Date() }
-  ]
-  
-export default function Calendar() {
+export default function Calendar({ events }) {
   return (
     <div>
-    <h1>Demo App</h1>
-    <FullCalendar
-      plugins={[daygrid]}
-      initialView='dayGridMonth'
-      weekends={false}
-      events={events}
-      eventContent={renderEventContent}
-    />
-  </div>
-  )
+      <FullCalendar
+        plugins={[daygrid, interactionPlugin]}
+        initialView="dayGridMonth"
+        weekends={false}
+        events={events}
+        eventContent={renderEventContent}
+        // dateClick={handleDateClick}
+        eventClick={handleEventClick}
+      />
+    </div>
+  );
 }
 
 function renderEventContent(eventInfo) {
-    return (
-      <>
-        <b>{eventInfo.timeText}</b>
-        <i>{eventInfo.event.title}</i>
-      </>
-    )
-  }
+  return (
+    <>
+      <b>{eventInfo.timeText}</b>
+      <i>{eventInfo.event.title}</i>
+    </>
+  );
+}
+
+function handleEventClick(arg) {
+
+}
