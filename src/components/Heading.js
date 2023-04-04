@@ -1,6 +1,6 @@
 import CurrentDate from "./CurrentDate";
 
-export default function header() {
+export default function Heading() {
   return (
     <>
       <h1>eCalendar Home page</h1>

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-export default function InputEvent({ setAddEvent, addNewAppointment }) {
+export default function InputEvent({ setAddEvent, addNewEvent }) {
   const [appointmentDetails, setAppointmentDetails] = useState({});
   const titleRef = useRef();
   const dateRef = useRef();
@@ -16,7 +16,7 @@ export default function InputEvent({ setAddEvent, addNewAppointment }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    addNewAppointment(appointmentDetails);
+    addNewEvent(appointmentDetails);
 // Clear input fields
     titleRef.current.value = "";
     dateRef.current.value = "";
@@ -40,7 +40,6 @@ export default function InputEvent({ setAddEvent, addNewAppointment }) {
         <input
           type="date"
           id="date"
-          placeholder="mm/dd/yyyy"
           ref={dateRef}
           onChange={handleChange}
           required
