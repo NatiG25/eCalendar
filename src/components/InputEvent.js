@@ -3,13 +3,15 @@ import { useRef, useState } from "react";
 export default function InputEvent({ setAddEvent, addNewEvent }) {
   const [appointmentDetails, setAppointmentDetails] = useState({});
   const titleRef = useRef();
-  const dateRef = useRef();
+  const startDateRef = useRef();
+  const endDateRef = useRef();
   const descriptionRef = useRef();
 
   function handleChange() {
     setAppointmentDetails({
       title: titleRef.current.value,
-      date: dateRef.current.value,
+      start: startDateRef.current.value,
+      end: endDateRef.current.value,
       description: descriptionRef.current.value,
     });
   }
@@ -17,16 +19,17 @@ export default function InputEvent({ setAddEvent, addNewEvent }) {
   function handleSubmit(e) {
     e.preventDefault();
     addNewEvent(appointmentDetails);
-// Clear input fields
+
     titleRef.current.value = "";
-    dateRef.current.value = "";
+    startDateRef.current.value = "";
+    endDateRef.current.value = "";
     descriptionRef.current.value = "";
     setAppointmentDetails("");
   }
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label for="title">Title</label>
+        <label htmlFor="title">Title</label>
         <input
           type="text"
           id="title"
@@ -36,16 +39,25 @@ export default function InputEvent({ setAddEvent, addNewEvent }) {
           required
         />
 
-        <label for="date">Date</label>
+        <label htmlFor="date">Start Date</label>
         <input
           type="date"
           id="date"
-          ref={dateRef}
+          ref={startDateRef}
           onChange={handleChange}
           required
         />
 
-        <label for="description">Description</label>
+        <label htmlFor="date">End Date</label>
+        <input
+          type="date"
+          id="date"
+          ref={endDateRef}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="description">Description</label>
         <input
           type="text"
           id="description"

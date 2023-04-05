@@ -5,8 +5,8 @@ import AddEvent from "./AddEvent";
 
 export default function EventsLogic() {
   const [events, setEvents] = useState([
-    { title: "Meeting", date: "2023-04-10", description: "hello" },
-    { title: "space", date: "2023-04-11", description: "hello" },
+    { title: "Meeting", start: "2023-04-10", end: "2023-04-15", description: "hello" },
+    { title: "space", start: "2023-05-11", end: "2023-05-20", description: "hello" },
   ]);
 
   function addNewEvent(newEvent) {
