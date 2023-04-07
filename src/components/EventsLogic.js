@@ -5,8 +5,21 @@ import AddEvent from "./AddEvent";
 
 export default function EventsLogic() {
   const [events, setEvents] = useState([
-    { title: "Meeting", start: "2023-04-10", end: "2023-04-15", description: "hello" },
-    { title: "space", start: "2023-05-11", end: "2023-05-20", description: "hello" },
+    {
+      title: "Meeting",
+      start: "2023-04-10",
+      end: "2023-04-15",
+      duration: "2:00",
+      // endTime: "15:00",
+      description: "hello",
+      // allDay: false,
+    },
+    {
+      title: "space",
+      start: "2023-05-11",
+      end: "2023-05-20",
+      description: "hello",
+    },
   ]);
 
   function addNewEvent(newEvent) {
