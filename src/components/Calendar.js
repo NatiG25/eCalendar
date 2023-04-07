@@ -12,8 +12,15 @@ export default function Calendar({ events }) {
         headerToolbar={{
           left: "prev,next today",
           center: "title",
-          right: "timeGridWeek,timeGridDay,dayGridMonth",
+          right: "dayGridMonth",
         }}
+        // slotLabelFormat={{
+        //   hour: "2-digit",
+        //   minute: "2-digit",
+        //   omitZeroMinute: false,
+        //   meridiem: "narrow",
+        //   hour12: true,
+        // }}
         height={"90vh"}
         events={events}
         eventContent={renderEventContent}
@@ -35,7 +42,7 @@ function renderEventContent(eventInfo) {
 
 function handleEventClick(arg) {
   alert(arg.event.extendedProps.description);
-  console.log(arg.event.allDay);
+  console.log(arg.event);
 }
 
 function handleDateClick(arg) {
